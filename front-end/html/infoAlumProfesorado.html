@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    
+    <meta charset="UTF-8">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <meta name="generator" content="Hugo 0.111.3">
+
+    <title>ALUMNADO</title>
+    <link href="../style/principal.css" rel="stylesheet">
+    <script src="../js/alumnoInfoPro.js"></script>
+    
+    
+  </head>
+  <body>
+
+
+    
+    <header data-bs-theme="dark">
+    <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+            <h4>I.E.S Velázquez</h4>
+            <p class="text-body-secondary">
+                El IES “Velázquez”, situado en el casco histórico de la ciudad de Sevilla, es una de las instituciones educativas más antiguas de esta hermosa ciudad. A lo largo de su extensa vida académica han pasado por sus aulas más de 45.000 estudiantes y más de 1.000 profesores, además de un sinfín de personas asociadas a todo tipo de actividades relacionadas con la educación.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+            <h4>Contacto</h4>
+            <p class="text-body-secondary">
+                Tel: 955622861 | Fax: 955622866
+                41006900.administracion@g.educaand.es
+                Horario de secretaría:
+                Lunes a viernes de 9:30h a 13:30h
+            </p>
+            <button onclick="cerrar()">Cerrar Sesión</button>   
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>Gestión I.E.S Velázquez</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+    </div>
+    </header>
+
+    <main>
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">ALUMN@</h1>
+            <p class="lead text-body-secondary">Puedes gestionar su información.</p>
+            <p>
+            <a href="profesor.html" class="btn btn-secondary my-2">Volver al listado</a>
+            </p>
+        </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+        <H3>INFORMACION ALUMNO</H3>
+        <BR>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="alumno">
+
+        </div>
+        <hr>
+        <H3>ASIGNACION</H3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="asignacion">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th scope="row">Empresa
+                        <select name="Empresa" id="Empresa" onchange="sedes()">
+                            <option value="">VACIO</option>
+                        </select>
+                    </th>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">Sede
+                        <select name="Sede" id="Sede">
+                        </select>
+                    </th>                 
+                </tr>
+                <tr>
+                    <th scope="row">Estado
+                        <select name="Estado" id="Estado">
+                            <option value="">NO DECLARADO</option>
+                            <option value="PENDIENTE">PENDIENTE</option>
+                            <option value="ENTREVISTA">ENTREVISTA</option>
+                            <option value="ASIGNADA">ASIGNADA</option>
+                        </select>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="asignacion">
+            <button type="button" class="btn btn-success" onclick="crearAsignacion()">Acutalizar asignación</button>
+        </div>
+        <br>
+        <hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="cv">
+            <H3>CV</H3>
+            <div id="existe">
+            
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </main>  
+  </body>
+</html>
