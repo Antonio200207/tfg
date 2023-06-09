@@ -7,8 +7,8 @@ window.onload = function(){
 
 function cambiar(event) {
     event.preventDefault();
-
-    window.location.href = "html/register.html"
+    
+    window.location.replace("html/register.html");
     
 }
 
@@ -104,11 +104,11 @@ function login(us, conta) {
           if (us[0].tipo == "alumno") {
             window.localStorage.setItem('dni', us[0].dni);
             window.localStorage.setItem('tipo', 'alumno');
-            window.open('html/infoAlumno.html');
+            window.location.replace("html/infoAlumno.html");
           } else {
             window.localStorage.setItem('dni', us[0].dni);
             window.localStorage.setItem('tipo', 'docente');
-            window.open('html/profesor.html');
+            window.location.replace("html/profesor.html");
           }
     
         }

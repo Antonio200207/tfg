@@ -8,7 +8,8 @@ window.onload = function(){
 function cambiar(event) {
     event.preventDefault();
 
-    window.location.href = "../index.html"
+    window.location.replace("../index.html");
+
 }
 
 function comprobar(event) {

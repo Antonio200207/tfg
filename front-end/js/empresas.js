@@ -5,7 +5,7 @@ window.onload = function(){
 
     
   if ((dni==null) || (tipo!="docente")) {
-    window.location.href = '../index.html';
+    window.location.replace("../index.html");
   }else{
     let url = `http://localhost:8000/api/empresas`;
     let metodo = 'GET';
@@ -19,9 +19,7 @@ window.onload = function(){
 
 function hacerPeticion(url, metodo) {
   
-    // Configurar la solicitud HTTP
-    // Obtener el token del localStorage
-    //let token = 'UHnv1KyVXCpvlPwpe6zkTjD1VzKmhGMFktGGPFODhYgdpvCjk5mWVriVKjWVrEZ9'//localStorage.getItem('token');
+
 
     let options = {
         method: metodo,
@@ -31,23 +29,22 @@ function hacerPeticion(url, metodo) {
         }
     };
 
-    // Realizar la petición a la API
     fetch(url, options)
     .then(response => response.json())
     .then(data => {
 
-        // Obtener el usuario de la respuesta
+  
         let us = data.data;
         us.forEach(element => {
-            // Generar el contenido HTML para mostrar los datos del usuario
+         
             let container = generarHTML(element);
-            // Mostrar los datos en el elemento HTML
+        
             document.getElementById('empresas').innerHTML += container;            
         });
 
     })
     .catch(error => {
-        // Manejar cualquier error en la petición
+      
         alert('Error:', error);
     });
 }
@@ -270,6 +267,6 @@ function generarHTML(em) {
   function cerrar() {
     if(confirm('Seguro que quieres cerrar sesión')){
       localStorage.clear();
-      window.open('../index.html');
+      window.location.replace("../index.html");
     }
   }

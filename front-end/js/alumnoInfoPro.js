@@ -8,7 +8,7 @@ window.onload = function(){
     let tipo = window.localStorage.getItem('tipo');
     
     if ((dni==null) || (tipo!="docente")) {
-        window.location.href = '../index.html';
+        window.location.replace("../index.html");
     }else{
         let url = `http://localhost:8000/api/alumno/${alumno}`;
         let metodo = 'GET';
@@ -151,7 +151,7 @@ function empresa() {
             }
         };
     
-        // Realizar la petición a la API
+
         fetch(url, options)
         .then(response => response.json())
         .then(data => {
@@ -237,14 +237,13 @@ function getCurriculum() {
             'Content-Type': 'application/json',
         }
     };
-  
-    // Realizar la petición a la API
+ 
     fetch(url, options)
     .then(response => response.json())
     .then(data => {
         let us = data.data;
         
-        // Generar el contenido HTML para mostrar los datos del usuario
+   
         console.log(us);
   
             if (us.length === 0) {
@@ -282,6 +281,6 @@ function getCurriculum() {
   function cerrar() {
     if(confirm('Seguro que quieres cerrar sesión')){
       localStorage.clear();
-      window.open('../index.html');
+      window.location.replace("../index.html");
     }
   }

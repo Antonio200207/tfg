@@ -8,7 +8,7 @@ window.onload = function(){
     let tipo = window.localStorage.getItem('tipo');
     
     if ((dni==null) || (tipo!="alumno")) {
-      window.location.href = '../index.html';
+      window.location.replace("../index.html");
     }else{
       let url = `http://localhost:8000/api/alumno/${dni}`;
       let metodo = 'GET';
@@ -30,29 +30,26 @@ function hacerPeticion(url, metodo) {
         }
     };
 
-    // Realizar la petición a la API
     fetch(url, options)
     .then(response => response.json())
     .then(data => {
 
-        // Obtener el usuario de la respuesta
+  
         let us = data.data;
         us.forEach(element => {
-            // Generar el contenido HTML para mostrar los datos del usuario
+      
             let container = generarHTML(element);
-            // Mostrar los datos en el elemento HTML
+           
             document.getElementById('alumno').innerHTML += container;            
         });
 
     })
     .catch(error => {
-        // Manejar cualquier error en la petición
         alert('Error:', error);
     });
 }
 
 function generarHTML(alumno) {
-    // Generar el contenido HTML para mostrar los datos del usuario
     let html=``;
     html = `
         <table class="table">
@@ -158,10 +155,9 @@ function subirCurriculum(nom, ruta) {
         dni_alumno: dni
       };
     
-      // Endpoint de la API para registrar usuarios
       let url = "http://localhost:8000/api/cv";
     
-      // Envío de la solicitud POST
+ 
       fetch(url, {
         method: 'POST',
         headers: {
@@ -200,13 +196,12 @@ function getCurriculum() {
       }
   };
 
-  // Realizar la petición a la API
+
   fetch(url, options)
   .then(response => response.json())
   .then(data => {
       let us = data.data;
-      
-      // Generar el contenido HTML para mostrar los datos del usuario
+   
       console.log(us);
 
           if (us.length === 0) {
@@ -265,7 +260,6 @@ function getAsignacion() {
   .then(data => {
       let us = data.data;
       
-      // Generar el contenido HTML para mostrar los datos del usuario
       console.log(us);
 
           if (us.length === 0) {
@@ -325,6 +319,6 @@ function borrar(id,nom) {
 function cerrar() {
   if(confirm('Seguro que quieres cerrar sesión')){
     localStorage.clear();
-    window.open('../index.html');
+    window.location.replace("../index.html");
   }
 }

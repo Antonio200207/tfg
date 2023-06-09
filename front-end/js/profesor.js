@@ -4,7 +4,7 @@ window.onload = function(){
   let tipo = window.localStorage.getItem('tipo');
   
   if ((dni==null) || (tipo!="docente")) {
-    window.location.href = '../index.html';
+    window.location.replace("../index.html");
   }else{
     let url = `http://localhost:8000/api/alumnos`;
     let metodo = 'GET';
@@ -188,6 +188,6 @@ function generarHTML(us) {
   function cerrar() {
     if(confirm('Seguro que quieres cerrar sesión')){
       localStorage.clear();
-      window.open('../index.html');
+      window.location.replace("../index.html");
     }
   }
